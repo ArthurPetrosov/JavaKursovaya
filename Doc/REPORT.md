@@ -13,4 +13,4 @@ The main errors were found in the work of the web form:
 - entering card data that was not provided for testing does not show errors
 - incorrectly calculated card life limit
 
-![Screenshot 2023-07-11 at 18.29.16.png](..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2F9k%2Fbw8j7swx7fd4hf61zfr_jj9m0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_FOcHMs%2FScreenshot%202023-07-11%20at%2018.29.16.png)
+<img width="661" alt="Screenshot 2023-07-11 at 19 09 31" src="https://github.com/ArthurPetrosov/JavaKursovaya/assets/125126241/3ab46185-500e-4fe5-a8d9-5e878345daa7">
