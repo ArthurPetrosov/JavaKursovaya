@@ -24,9 +24,8 @@ public class DataHelper {
         return faker.number().digits(3);
     }
 
-    public static String generateName(String locale, int length) {
-        var str = fakeValuesService.regexify("[a-z.-]{21}").toUpperCase();
-        return str.length() < length ? str : str.substring(0, length);
+    public static String generateName() {
+        return faker.name().fullName();
     }
 
     public static String generateMonthYear(int months, String pattern) {
@@ -36,13 +35,13 @@ public class DataHelper {
     public static CardInfo getApprovedCard() {
         return new CardInfo("1111 2222 3333 4444",
                 generateMonthYear(60, "MM"), generateMonthYear(60,"yy"),
-                generateName("en", 20), generateCode("en"));
+                generateName(), generateCode("en"));
     }
 
     public static CardInfo getDeclinedCard() {
         return new CardInfo("5555 6666 7777 8888",
                 generateMonthYear(60, "MM"), generateMonthYear(60,"yy"),
-                generateName("en", 20), generateCode("en"));
+                generateName(), generateCode("en"));
     }
     public static CardInfo getEmptyCard() {
         return new CardInfo("", "", "", "", "");

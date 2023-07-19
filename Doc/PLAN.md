@@ -21,8 +21,7 @@
 
   4.2 Card number not from the list of developers
 - Values: 16 digits that are not APPROVED/DECLINED card numbers
-- Expected result: web - sending does not occur, an error appears near the "Invalid format" field;
-  DB - information is not updated
+- Expected result: the system is refused after submitting the form and verifying the data in the emulator of banking services
 
 4.3 Limit value
 - Values: 15 first digits of the APPROVED card

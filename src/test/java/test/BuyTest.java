@@ -69,10 +69,23 @@ public class BuyTest {
     @ParameterizedTest
     @CsvSource({
             "Поле обязательно для заполнения, ",
-            "Неверный формат, 1234 1234 1234 1234",
             "Неверный формат, 1111 2222 3333 444"
     })
     void buyCardValidation4_123 (String expected, String cardNumber){
+        var salesPage = new SalesPage();
+        var approvedCard = DataHelper.getApprovedCard();
+        var newCard = new DataHelper.CardInfo(cardNumber,
+                approvedCard.getMonth(), approvedCard.getYear(), approvedCard.getOwner(), approvedCard.getCode());
+        var buyPage = salesPage.getBuyPage();
+        buyPage.clickGoOn(newCard);
+        buyPage.getCardNumberError(expected);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "Неверный формат, 1234 1234 1234 1234"
+    })
+    void buyCardValidation4_DB (String expected, String cardNumber){
         var salesPage = new SalesPage();
         var approvedCard = DataHelper.getApprovedCard();
         var newCard = new DataHelper.CardInfo(cardNumber,
@@ -249,7 +262,7 @@ public class BuyTest {
     void buyOwnerValidation7_3 (){
         var salesPage = new SalesPage();
         var approvedCard = DataHelper.getApprovedCard();
-        var owner = DataHelper.generateName("en", 19);
+        var owner = DataHelper.generateName();
         var newCard = new DataHelper.CardInfo(approvedCard.getCardNumber(),
                 approvedCard.getMonth(), approvedCard.getYear(), owner, approvedCard.getCode());
         var buyPage = salesPage.getBuyPage();
@@ -261,7 +274,7 @@ public class BuyTest {
     void buyOwnerValidation7_4 (){
         var salesPage = new SalesPage();
         var approvedCard = DataHelper.getApprovedCard();
-        var owner = DataHelper.generateName("en", 21);
+        var owner = DataHelper.generateName();
         var newCard = new DataHelper.CardInfo(approvedCard.getCardNumber(),
                 approvedCard.getMonth(), approvedCard.getYear(), owner, approvedCard.getCode());
         var buyPage = salesPage.getBuyPage();
