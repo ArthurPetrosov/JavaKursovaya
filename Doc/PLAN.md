@@ -299,3 +299,11 @@ DB - information is not updated
 # List and description of possible risks in automation:
 
 Lack of knowledge about how the database works - difficulty with analyzing data from the database using automation
+
+# Interval assessment taking into account risks (in hours):
+- 1 hour project setup (done)
+- 3 hours manual testing + filling out reports on the results of defects
+- 5 hours preparation for testing
+- 4 hours writing attests
+- 2 hours reporting on the results of testing
+- 2 hours reporting on project results
